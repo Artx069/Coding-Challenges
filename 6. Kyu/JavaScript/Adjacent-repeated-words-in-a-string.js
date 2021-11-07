@@ -1,3 +1,5 @@
+"use strict";
+
 /*
 You know how sometimes you write the the same word twice in a sentence, but then don't notice that it happened? For example, you've been distracted for a second. Did you notice that "the" is doubled in the first sentence of this description?
 
@@ -18,29 +20,31 @@ Examples:
 */
 
 function countAdjacentPairs(str) {
-  console.log(str)
-let split = str.split(" ")
-let reps = []
-let currentWord = split[0]
+  console.log(str);
+  let split = str.split(" ");
+  let reps = [];
+  let currentWord = split[0];
 
-let counter = 0
+  let counter = 0;
 
-for(let i = 1; i < split.length; i++){
-    if(currentWord.toLocaleLowerCase() == split[i].toLocaleLowerCase()){
-        counter++;
+  for (let i = 1; i < split.length; i++) {
+    if (currentWord.toLocaleLowerCase() == split[i].toLocaleLowerCase()) {
+      counter++;
+    } else {
+      if (counter > 0) {
+        reps.push([currentWord, counter]);
+      }
+      counter = 0;
+      currentWord = split[i];
     }
-    else{
-        if(counter > 0){
-            reps.push([currentWord, counter])   
-        }
-        counter = 0
-        currentWord = split[i]
+    if (
+      currentWord.toLocaleLowerCase() == split[i].toLocaleLowerCase() &&
+      i == split.length - 1
+    ) {
+      if (counter != 0) {
+        reps.push([currentWord, counter]);
+      }
     }
-    if(currentWord.toLocaleLowerCase() == split[i].toLocaleLowerCase() && i == split.length-1){
-                if(counter != 0){
-            reps.push([currentWord, counter])
-        }
-    }
-}
-  return reps.length
+  }
+  return reps.length;
 }
