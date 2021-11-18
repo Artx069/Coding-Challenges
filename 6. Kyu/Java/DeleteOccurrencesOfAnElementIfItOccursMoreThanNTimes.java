@@ -10,7 +10,7 @@ Example
   
   deleteNth ([20,37,20,21],1) // return [20,37,21]
 */
-*/
+
 import java.util.ArrayList;
 import java.util.HashMap;
 public class DeleteOccurrencesOfAnElementIfItOccursMoreThanNTimes {
