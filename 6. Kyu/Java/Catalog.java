@@ -29,15 +29,7 @@ You can see examples in the "Sample tests".
 import java.util.Arrays;
 public class Catalog {
     public static String catalog(String s, String article) {
-        String[] array = Arrays.stream(s.replace("\n\n", "\n").split("\n")).filter(x -> x.contains(article)).toArray(String[]::new);
-        String solution = "";
-        for(String entry : array){
-            String articleName = entry.replaceAll("^[a-zA-Z0-9<>].*<name>", "").replaceAll("</name.*$", "");
-            String price = entry.replaceAll("^[a-zA-Z0-9<>].*<prx>", "").replaceAll("</prx.*$", "");
-            String quantity = entry.replaceAll("^[a-zA-Z0-9<>].*<qty>", "").replaceAll("</qty.*$", "");
-            solution += articleName + " > prx: $" + price + " qty: " + quantity + "\n";
-
-        }
-      return solution.length() == 0 ? "Nothing" : solution.trim();  
+        String solution = String.join("\n", Arrays.stream(s.split("\n\n")).filter(x -> x.contains(article)).map(x -> x.replace("<prod><name>", "").replace("</name><prx>", " > prx: $").replace("</prx><qty>", " qty: ").replace("</qty></prod>", "")).toArray(String[]::new));
+        return solution.length() > 0 ? solution : "Nothing";
     }
 }
