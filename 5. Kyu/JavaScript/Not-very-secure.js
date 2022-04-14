@@ -21,3 +21,8 @@ function alphanumeric(string) {
   });
   return flag;
 }
+
+// new approach
+function alphanumeric2(string) {
+  return string.match(/^[a-zA-Z0-9]+$/) != null;
+}
