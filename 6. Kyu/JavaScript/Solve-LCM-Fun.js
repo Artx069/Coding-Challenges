@@ -48,9 +48,6 @@ function kiyoLcm(a) {
     .map((x) => x.reduce((a, b) => a + b))
     .filter((x, i, arr) => i == arr.lastIndexOf(x));
 
-  let min = Math.min(...a);
-  let max = Math.max(...a);
-
   const gcd = (a, b) => (a ? gcd(b % a, a) : b);
 
   const lcm = (a, b) => (a * b) / gcd(a, b);
