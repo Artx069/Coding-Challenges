@@ -19,19 +19,8 @@ foo099 -> foo100
 Attention: If the number has leading zeros the amount of digits should be considered.
 */
 function incrementString(strng) {
-  let nInS = strng.match(/[0-9]+/) != null ? strng.match(/[0-9]+/)[0] : 0;
-  let nInSLength = nInS.toString().length;
-  let strngWithoutN = strng.replace(/[0-9]/g, "");
-  let incremented = parseInt(nInS) + 1;
-  let sol =
-    strngWithoutN +
-    (incremented.toString().length == nInSLength
-      ? incremented
-      : "0".repeat(
-          nInSLength - incremented.toString().length < 0
-            ? 0
-            : nInSLength - incremented.toString().length
-        ) + incremented);
-
-  return sol;
+  let num = strng.match(/[0-9]+/) ? strng.match(/[0-9]+/)[0] : 0;
+  let numLength = num.length;
+  let rest = strng.match(/[^0-9]+/) ? strng.match(/[^0-9]+/)[0] : "";
+  return rest + (parseInt(num) + 1).toString().padStart(numLength, "0");
 }
