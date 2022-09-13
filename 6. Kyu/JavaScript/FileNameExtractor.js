@@ -1,3 +1,5 @@
+"use strict";
+
 /*
 You have to extract a portion of the file name as follows:
 
