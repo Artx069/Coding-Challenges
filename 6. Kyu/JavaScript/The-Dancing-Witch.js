@@ -1,3 +1,5 @@
+"use strict";
+
 /*
 The Gods punished our Kingdom for being rich and prosperous - The Black Death is spreading between us. Moreover, plenty of people in hundreds of villages are affected by the dancing mania, singing and dancing till death. Some people say that they saw the dancing Witch in the crowds. You, Great Inquisitor, must find her and put her at the stake!
 
