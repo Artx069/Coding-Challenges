@@ -1,3 +1,5 @@
+"use strict";
+
 /*
 Dave has a lot of data he is required to apply filters to, which are simple enough, but he wants a shorter way of doing so.
 
