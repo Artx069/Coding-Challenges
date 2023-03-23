@@ -1,3 +1,5 @@
+"use strict";
+
 /*
 Convert a number to a binary coded decimal (BCD).
 
