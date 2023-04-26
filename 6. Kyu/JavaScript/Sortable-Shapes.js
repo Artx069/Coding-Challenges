@@ -1,3 +1,5 @@
+"use strict";
+
 /*
 Although shapes can be very different by nature, they can be sorted by the size of their area.
 
